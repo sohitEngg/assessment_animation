@@ -37,9 +37,9 @@ class _QuizViewState extends State<QuizView> {
           child: Column(
             children: [
               Spring.slide(
-                delay: Duration(milliseconds: ANIM_START_TIME),
+                delay: Duration(milliseconds: FIRST_ANIM_START_TIME),
                 slideType: SlideType.slide_in_bottom,
-                animDuration: Duration(milliseconds: 1000),
+                animDuration: Duration(milliseconds: SLIDE_ANIM_DURATION),
                 animStatus: (status) => null,
                 curve: Curves.easeInToLinear,
                 child: Html(
@@ -52,9 +52,9 @@ class _QuizViewState extends State<QuizView> {
                 height: 20,
               ),
               Spring.slide(
-                  delay: Duration(milliseconds: ANIM_START_TIME + 1000),
+                  delay: Duration(milliseconds: FIRST_ANIM_START_TIME + 1000),
                   slideType: SlideType.slide_in_bottom,
-                  animDuration: Duration(milliseconds: 500),
+                  animDuration: Duration(milliseconds: SLIDE_ANIM_DURATION),
                   animStatus: (status) => null,
                   child: CountDownTimer()),
               SizedBox(

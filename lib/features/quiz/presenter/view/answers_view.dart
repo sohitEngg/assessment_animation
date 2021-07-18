@@ -55,20 +55,24 @@ class _AnswersViewState extends State<AnswersView>
     return options
         .map(
           (option) => Spring.fadeIn(
-            delay:
-                Duration(milliseconds: (2 * ANIM_START_TIME) + (index++ * 200)),
+            delay: Duration(
+                milliseconds: FIRST_ANIM_START_TIME +
+                    2 * SLIDE_ANIM_DURATION +
+                    (index++ * 200)),
             springController: springController,
             startOpacity: 0,
             endOpacity: 1,
-            animDuration: Duration(microseconds: 400),
+            animDuration: Duration(microseconds: COMMON_ANIM_DURATION),
             curve: Curves.bounceIn,
             child: Spring.rotate(
               springController: springController,
               startAngle: 0,
               endAngle: 360,
               delay: Duration(
-                  milliseconds: (2 * ANIM_START_TIME) + (index++ * 200)),
-              animDuration: Duration(milliseconds: ANIM_START_TIME),
+                  milliseconds: FIRST_ANIM_START_TIME +
+                      2 * SLIDE_ANIM_DURATION +
+                      (index++ * 200)),
+              animDuration: Duration(milliseconds: COMMON_ANIM_DURATION),
               animStatus: (T) => print(T),
               child: InkWell(
                 onTap: () {

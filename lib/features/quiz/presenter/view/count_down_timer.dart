@@ -1,3 +1,4 @@
+import 'package:animation_app/common/animation_constants.dart';
 import 'package:animation_app/features/quiz/presenter/view/cutom_timer_painter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,9 @@ class _CountDownTimerState extends State<CountDownTimer>
       duration: Duration(seconds: 10),
     );
 
-    _startAnimation();
+    Future.delayed(const Duration(milliseconds: FIRST_ANIM_START_TIME * 4), () {
+      _startAnimation();
+    });
   }
 
   @override
