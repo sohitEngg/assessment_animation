@@ -1,0 +1,1 @@
+const ANIM_START_TIME = 500;
